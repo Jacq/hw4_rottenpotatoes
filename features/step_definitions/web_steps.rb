@@ -41,11 +41,11 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
 end
 
-Given /^(?:|I )am on ([^t].+)$/ do |page_name|
+Given /^(?:|I )am on ((?!the details page for).+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-When /^(?:|I )go to ([^t].+)$/ do |page_name|
+When /^(?:|I )go to ((?!the edit page for).+)$/ do |page_name|
   visit path_to(page_name)
 end
 
